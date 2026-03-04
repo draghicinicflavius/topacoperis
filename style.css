@@ -332,3 +332,22 @@ h2::after {
     .main-headline { font-size: 2rem; }
     .sub-headline { font-size: 1.2rem; }
 }
+/* Containerul care ține textul "strâns" pe mijloc */
+.informatii-centrate {
+    max-width: 800px;  /* Lățimea maximă - ca să nu fie lat cât ecranul */
+    margin: 0 auto;    /* Trucul magic care centrează blocul pe orizontală */
+    text-align: center; /* Centrează textul în interior */
+}
+
+/* Lista trebuie să fie centrată ca bloc, dar textul aliniat la stânga să arate bine */
+.lista-centrata-wrapper {
+    display: inline-block; /* Face blocul să fie cât conținutul */
+    text-align: left;      /* Textul rămâne la stânga pentru a alinia bulinele */
+    margin: 20px 0;        /* Puțin spațiu sus-jos */
+}
+
+/* Stil pentru elementele din listă */
+.lista-centrata-wrapper li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
