@@ -43,7 +43,7 @@ body {
    2. HEADER & NAVIGARE (Subțire, Fixă & REM)
    ========================================= */
 .main-header {
-    background-color: var(--primary-red);
+    background-color: #ff0000;
     height: 3.75rem; /* 60px transformat în rem */
     padding: 0;
     position: fixed;
