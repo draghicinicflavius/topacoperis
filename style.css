@@ -286,34 +286,42 @@ body {
 /* Video Wrapper */
 .despre-video-wrapper {
     width: 100%;
-    background-color: black; /* Fundal negru pentru spațiile goale */
     border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center; /* Centrează video-ul dacă e mai îngust */
+    overflow: hidden; /* Colțuri rotunjite pentru tot blocul */
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    
+    /* AICI E FIX-UL: Le așezăm pe coloană (unul sub altul) */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
 
 .despre-video-wrapper video {
-    width: 100%; /* Încearcă să ocupe lățimea */
-    max-height: 500px; /* LIMITA: Nu îl lăsa să fie mai înalt de 500px! */
-    object-fit: contain; /* IMPORTANT: Arată tot video-ul, nu îl tăia și nu îl deforma */
+    width: 100%;
+    max-height: 500px; /* Limităm înălțimea */
+    object-fit: contain; /* Încadrează tot video-ul fără să taie din el */
+    background-color: black; /* Benzile negre apar doar în zona video */
     display: block;
 }
 
-/* Ajustare specială pentru mobil */
+.video-caption {
+    width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555; /* Text gri închis */
+    background-color: white; /* Fundal alb pentru text */
+    padding: 15px; /* Spațiu să respire textul */
+    border-top: 1px solid #eee; /* O linie fină de separare */
+}
+
+/* Ajustare Mobil */
 @media (max-width: 900px) {
     .despre-video-wrapper video {
-        max-height: 400px; /* Pe mobil limităm și mai mult înălțimea */
+        max-height: 450px; /* Pe mobil îl facem puțin mai scurt */
     }
 }
 
-.video-caption {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 10px;
-}
+
 
 /* =========================================
    5. ALTE SECȚIUNI & UTILITĂȚI
