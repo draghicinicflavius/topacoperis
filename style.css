@@ -284,11 +284,28 @@ body {
 }
 
 /* Video Wrapper */
-.despre-video-wrapper video {
+.despre-video-wrapper {
     width: 100%;
+    background-color: black; /* Fundal negru pentru spațiile goale */
     border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centrează video-ul dacă e mai îngust */
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.despre-video-wrapper video {
+    width: 100%; /* Încearcă să ocupe lățimea */
+    max-height: 500px; /* LIMITA: Nu îl lăsa să fie mai înalt de 500px! */
+    object-fit: contain; /* IMPORTANT: Arată tot video-ul, nu îl tăia și nu îl deforma */
     display: block;
+}
+
+/* Ajustare specială pentru mobil */
+@media (max-width: 900px) {
+    .despre-video-wrapper video {
+        max-height: 400px; /* Pe mobil limităm și mai mult înălțimea */
+    }
 }
 
 .video-caption {
