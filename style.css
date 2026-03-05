@@ -486,3 +486,64 @@ h2::after {
 @media (min-width: 901px) {
     .mobile-only { display: none; }
 }
+
+/* --- SECȚIUNEA CONTACT --- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Împarte ecranul în două jumătăți egale */
+    gap: 4rem; /* Spațiu mai mare între formular și text */
+    align-items: center; /* Le aliniază frumos pe centru vertical */
+}
+
+/* Stilizare Formular */
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: left; /* Textul din formular aliniat la stânga */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--dark-grey);
+}
+
+/* Stilizare Date Contact (Partea Dreaptă) */
+.contact-info {
+    text-align: left; /* Textul aliniat la stânga */
+}
+
+/* --- RESPONSIVE (Mobil) --- */
+@media (max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* O singură coloană pe mobil */
+        gap: 3rem;
+        /* Pe mobil, vrem ca datele de contact să fie PRIMELE, chiar dacă în HTML sunt a doua? 
+           Dacă da, decomentează liniile de mai jos (display flex). 
+           Dacă nu, lasă așa și va apărea formularul primul. */
+           
+        /* display: flex;
+        flex-direction: column-reverse; */ 
+    }
+}
+/* --- BUTON WHATSAPP (În pagina de contact) --- */
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366; /* Verdele oficial WhatsApp */
+    color: white !important; /* Text alb forțat */
+    padding: 10px 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E; /* Verde mai închis la mouse-over */
+    transform: translateY(-2px); /* Se ridică puțin */
+}

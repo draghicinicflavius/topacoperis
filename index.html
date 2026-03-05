@@ -101,7 +101,7 @@
                             <source src="video/video_acoperis.mp4" type="video/mp4">
                             Browserul tău nu suportă video.
                         </video>
-                        <p class="video-caption">Vezi o lucrare recentă executată de noi</p>
+                        <p class="video-caption">Folosim doar produse de cea mai înaltă calitate.</p>
                     </div>
 
                 </div>
@@ -135,44 +135,54 @@
         </section>
 
         <section id="contact" class="section-padding bg-dark">
-            <div class="container">
-                <h2>Contactează-ne pentru o Ofertă</h2>
-                <div class="contact-wrapper">
-                    
-                    <div class="contact-info">
-                        <h3>Date de Contact</h3>
-                        <p>Suntem la un telefon distanță pentru orice întrebare legată de acoperișul tău.</p>
-                        
-                        <div class="info-item">
-                            <strong>📍 Adresă:</strong>
-                            <span>Târgu Mureș și împrejurimi</span>
-                        </div>
-                        
-                        <div class="info-item">
-                            <strong>📞 Telefon:</strong>
-                            <a href="tel:0700000000">07xx xxx xxx</a>
-                        </div>
-                        
-                        <div class="info-item">
-                            <strong>📧 Email:</strong>
-                            <a href="mailto:contact@topacoperis.ro">contact@topacoperis.ro</a>
-                        </div>
+    <div class="container">
+        <h2>Contactează-ne pentru o Ofertă</h2>
+        <div class="contact-wrapper">
+            
+            <form action="https://formspree.io/f/mzdjpyre" method="POST" class="contact-form">
+                
+                <label>Numele Tău:</label>
+                <input type="text" name="nume" placeholder="Ex: Ion Popescu" required>
+                
+                <label>Număr de Telefon:</label>
+                <input type="tel" name="telefon" placeholder="07xx xxx xxx" required>
+                
+                <label>Mesajul Tău:</label>
+                <textarea name="mesaj" rows="5" placeholder="Cu ce te putem ajuta? (ex: reparație, montaj nou)"></textarea>
+                
+                <button type="submit" class="btn btn-red" style="width: 100%; border: none; cursor: pointer;">Trimite Mesajul</button>
+            </form>
 
-                        <div class="info-item">
-                            <strong>⏰ Program:</strong>
-                            <span>Luni - Sâmbătă: 08:00 - 18:00</span>
-                        </div>
-                    </div>
-
-                    <form class="contact-form">
-                        <input type="text" placeholder="Numele Tău" required>
-                        <input type="tel" placeholder="Număr de Telefon" required>
-                        <textarea rows="5" placeholder="Cu ce te putem ajuta? (ex: reparație, montaj nou)"></textarea>
-                        <button type="submit" class="btn btn-red" style="width: 100%; border: none;">Trimite Mesajul</button>
-                    </form>
+            <div class="contact-info">
+                <h3>Date de Contact</h3>
+                <p>Suntem la un telefon distanță pentru orice întrebare legată de acoperișul tău.</p>
+                
+                <div class="info-item">
+                    <strong>📍 Adresă:</strong>
+                    <span>Târgu Mureș și împrejurimi</span>
                 </div>
+                
+                <div class="info-item">
+                    <strong>📞 Telefon:</strong>
+                    <a href="tel:0700000000">0700 000 000</a>
+                </div>
+                
+                <div class="info-item">
+                    <strong>📧 Email:</strong>
+                    <a href="mailto:contact@topacoperis.ro">contact@topacoperis.ro</a>
+                </div>
+
+                <div class="info-item">
+                     <strong>💬 WhatsApp:</strong>
+                     <a href="https://wa.me/40700000000?text=Salut,%20vreau%20o%20oferta%20pentru%20acoperis." target="_blank" class="btn-whatsapp">
+                        Trimite Mesaj Rapid
+                     </a>
+</div>
             </div>
-        </section>
+
+        </div>
+    </div>
+</section>
 
     </main>
 
