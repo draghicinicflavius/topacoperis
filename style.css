@@ -180,7 +180,7 @@ body {
 
 .hero-text {
     flex: 1; 
-    text-align: left;
+    text-align: center;
 }
 
 .main-headline {
@@ -316,7 +316,7 @@ body {
 .bg-light { background-color: var(--light-bg); }
 .bg-dark { background-color: #f4f4f4; }
 
-/* Centrare Text (pt. secțiunea Despre cu text centrat) */
+/* Centrare Text */
 .informatii-centrate {
     max-width: 800px;
     margin: 0 auto;
@@ -390,6 +390,7 @@ h2::after {
     font-size: 1.1rem;
     display: flex;
     flex-direction: column;
+    /* IMPORTANT: Asta făcea butonul lung. O lăsăm așa pentru text, dar tratăm butonul separat */
 }
 
 .info-item a {
@@ -465,6 +466,10 @@ h2::after {
     text-decoration: none;
     transition: 0.3s;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    
+    /* FIX PENTRU LUNGIME: Să fie cât textul, nu cât pagina */
+    width: fit-content; 
+    align-self: flex-start; /* Previne întinderea în flexbox */
 }
 
 .btn-whatsapp:hover {
@@ -473,76 +478,79 @@ h2::after {
 }
 
 /* =================================================================
-   6. RESPONSIVE OPTIMIZAT (MODIFICĂRILE TALE AICI)
-   Totul pe un singur ecran la mobil
+   6. RESPONSIVE OPTIMIZAT
    ================================================================= */
 @media (max-width: 900px) {
     
-    /* 1. HERO SECTION: Compactă */
+    /* 1. HERO SECTION */
     .hero-section {
-        min-height: auto; /* Scoatem înălțimea forțată */
-        padding: 40px 0 30px 0; /* Spațiu sus/jos redus */
-        align-items: flex-start; /* Aliniere sus */
+        min-height: 100vh; /* Păstrăm tot ecranul */
+        padding: 80px 0 30px 0; 
+        align-items: center; 
     }
 
     .hero-layout {
         flex-direction: column;
         text-align: center;
-        gap: 10px; /* Spațiu minim între elemente */
+        gap: 20px; 
+        justify-content: center;
     }
 
-    /* 2. TITLURI: Mult mai mici pe mobil */
+    /* 2. TITLURI */
     .main-headline {
-        font-size: 1.6rem; /* Micșorat pentru a încăpea */
+        font-size: 2rem; 
         margin-bottom: 0.5rem;
         line-height: 1.2;
     }
 
     .sub-headline {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
-    /* Butonul Sună Acum (Mobil) - Compact */
+    /* FIX BUTON SUNA ACUM: Centrat */
     .mobile-only {
         display: block;
-        margin-bottom: 10px;
+        width: 100%;      /* Ocupă toată lățimea containerului */
+        text-align: center; /* Forțează conținutul (butonul) pe centru */
+        margin-bottom: 15px;
     }
     
     .mobile-only .btn-red {
-        padding: 8px 20px;
-        font-size: 0.9rem;
+        padding: 10px 25px;
+        font-size: 1rem;
     }
 
-    /* 3. FORMULARUL (CARD): Foarte compact */
+    /* 3. FORMULARUL (CARD) */
     .hero-form-card {
         width: 100%;
         max-width: 100%;
-        padding: 1rem; /* Padding interior mic */
+        padding: 1.5rem; 
         margin-bottom: 0;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     }
 
     .hero-form-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
+        font-size: 1.2rem;
+        margin-bottom: 12px;
     }
 
     .hero-form-card label {
-        font-size: 0.85rem;
-        margin-bottom: 2px;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
     }
 
     .hero-form-card input, 
     .hero-form-card select {
-        padding: 5px 10px; /* Input subțire */
-        margin-bottom: 8px;
-        border-radius: 4px;
-        font-size: 0.9rem;
-        height: 38px; /* Înălțime fixă mică */
+        padding: 8px 10px; 
+        margin-bottom: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+        height: 42px; 
     }
 
     .btn-submit-full {
-        padding: 10px;
-        font-size: 1rem;
+        padding: 12px;
+        font-size: 1.1rem;
         margin-top: 5px;
     }
 
@@ -579,4 +587,28 @@ h2::after {
 
 @media (min-width: 901px) {
     .mobile-only { display: none; }
+}
+.main-footer {
+    background-color: #222; /* Negru închis */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--primary-red); /* O linie roșie elegantă sus */
+}
+
+.main-footer p {
+    margin-bottom: 5px;
+}
+
+.signature {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.brand-name {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
