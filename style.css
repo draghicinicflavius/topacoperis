@@ -38,7 +38,7 @@ body {
 }
 
 /* =========================================
-   2. HEADER & NAVIGARE (Subțire, Fixă)
+   2. HEADER & NAVIGARE
    ========================================= */
 .main-header {
     background-color: #ff0000;
@@ -150,7 +150,7 @@ body {
 }
 
 /* =========================================
-   3. HERO SECTION (Split Screen)
+   3. HERO SECTION (Desktop Default)
    ========================================= */
 .hero-section {
     position: relative;
@@ -161,9 +161,7 @@ body {
     color: white;
     text-align: left;
     margin-top: 3.75rem;
-    padding: 2rem 0; /* Spațiu sus-jos */
-
-    /* Fundal Blurat */
+    padding: 2rem 0;
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('images/fundal.jpg');
@@ -181,7 +179,7 @@ body {
 }
 
 .hero-text {
-    flex: 1; /* Ocupă jumătate din spațiu */
+    flex: 1; 
     text-align: left;
 }
 
@@ -243,7 +241,6 @@ body {
 
 .btn-submit-full:hover { background-color: #b30000; }
 
-/* Butoane Mobile */
 .btn-red {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -255,7 +252,7 @@ body {
 }
 
 /* =========================================
-   4. DESPRE NOI (Split Screen: Text + Video)
+   4. DESPRE NOI & VIDEO
    ========================================= */
 .despre-grid {
     display: grid;
@@ -287,10 +284,8 @@ body {
 .despre-video-wrapper {
     width: 100%;
     border-radius: 10px;
-    overflow: hidden; /* Colțuri rotunjite pentru tot blocul */
+    overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    
-    /* AICI E FIX-UL: Le așezăm pe coloană (unul sub altul) */
     display: flex;
     flex-direction: column; 
     align-items: center;
@@ -298,9 +293,9 @@ body {
 
 .despre-video-wrapper video {
     width: 100%;
-    max-height: 500px; /* Limităm înălțimea */
-    object-fit: contain; /* Încadrează tot video-ul fără să taie din el */
-    background-color: black; /* Benzile negre apar doar în zona video */
+    max-height: 500px; 
+    object-fit: contain; 
+    background-color: black;
     display: block;
 }
 
@@ -308,20 +303,11 @@ body {
     width: 100%;
     text-align: center;
     font-size: 0.95rem;
-    color: #555; /* Text gri închis */
-    background-color: white; /* Fundal alb pentru text */
-    padding: 15px; /* Spațiu să respire textul */
-    border-top: 1px solid #eee; /* O linie fină de separare */
+    color: #555;
+    background-color: white;
+    padding: 15px;
+    border-top: 1px solid #eee;
 }
-
-/* Ajustare Mobil */
-@media (max-width: 900px) {
-    .despre-video-wrapper video {
-        max-height: 450px; /* Pe mobil îl facem puțin mai scurt */
-    }
-}
-
-
 
 /* =========================================
    5. ALTE SECȚIUNI & UTILITĂȚI
@@ -329,6 +315,24 @@ body {
 .section-padding { padding: 5rem 0; }
 .bg-light { background-color: var(--light-bg); }
 .bg-dark { background-color: #f4f4f4; }
+
+/* Centrare Text (pt. secțiunea Despre cu text centrat) */
+.informatii-centrate {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lista-centrata-wrapper {
+    display: inline-block;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.lista-centrata-wrapper li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
 
 h2 {
     font-size: 2.5rem;
@@ -374,10 +378,11 @@ h2::after {
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
+    gap: 4rem;
+    align-items: center;
 }
 
+.contact-info { text-align: left; }
 .contact-info h3 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary-red); }
 
 .info-item {
@@ -399,6 +404,14 @@ h2::after {
     padding: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--dark-grey);
 }
 
 .contact-form input, 
@@ -440,31 +453,109 @@ h2::after {
     100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
 }
 
-/* =========================================
-   6. RESPONSIVE (Mobil)
-   ========================================= */
+/* Buton WhatsApp Contact */
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: white !important;
+    padding: 10px 20px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+/* =================================================================
+   6. RESPONSIVE OPTIMIZAT (MODIFICĂRILE TALE AICI)
+   Totul pe un singur ecran la mobil
+   ================================================================= */
 @media (max-width: 900px) {
-    /* Hero */
+    
+    /* 1. HERO SECTION: Compactă */
+    .hero-section {
+        min-height: auto; /* Scoatem înălțimea forțată */
+        padding: 40px 0 30px 0; /* Spațiu sus/jos redus */
+        align-items: flex-start; /* Aliniere sus */
+    }
+
     .hero-layout {
         flex-direction: column;
         text-align: center;
-        padding-top: 2rem;
+        gap: 10px; /* Spațiu minim între elemente */
     }
 
-    .hero-text { text-align: center; }
-    .hero-form-card { width: 100%; max-width: 100%; }
-    
+    /* 2. TITLURI: Mult mai mici pe mobil */
+    .main-headline {
+        font-size: 1.6rem; /* Micșorat pentru a încăpea */
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .sub-headline {
+        font-size: 1rem;
+    }
+
+    /* Butonul Sună Acum (Mobil) - Compact */
     .mobile-only {
         display: block;
-        margin-bottom: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .mobile-only .btn-red {
+        padding: 8px 20px;
+        font-size: 0.9rem;
     }
 
-    /* Despre Noi */
+    /* 3. FORMULARUL (CARD): Foarte compact */
+    .hero-form-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem; /* Padding interior mic */
+        margin-bottom: 0;
+    }
+
+    .hero-form-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-form-card label {
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+
+    .hero-form-card input, 
+    .hero-form-card select {
+        padding: 5px 10px; /* Input subțire */
+        margin-bottom: 8px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        height: 38px; /* Înălțime fixă mică */
+    }
+
+    .btn-submit-full {
+        padding: 10px;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    /* Restul elementelor pe mobil */
     .despre-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
     
+    .despre-video-wrapper video {
+        max-height: 450px;
+    }
+
     .lista-compacta {
         text-align: left;
         display: inline-block;
@@ -476,74 +567,16 @@ h2::after {
         padding-top: 10px;
     }
 
-    /* Contact */
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
     }
 }
 
 @media (min-width: 901px) {
     .mobile-only { display: none; }
-}
-
-/* --- SECȚIUNEA CONTACT --- */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Împarte ecranul în două jumătăți egale */
-    gap: 4rem; /* Spațiu mai mare între formular și text */
-    align-items: center; /* Le aliniază frumos pe centru vertical */
-}
-
-/* Stilizare Formular */
-.contact-form {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    text-align: left; /* Textul din formular aliniat la stânga */
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: var(--dark-grey);
-}
-
-/* Stilizare Date Contact (Partea Dreaptă) */
-.contact-info {
-    text-align: left; /* Textul aliniat la stânga */
-}
-
-/* --- RESPONSIVE (Mobil) --- */
-@media (max-width: 900px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr; /* O singură coloană pe mobil */
-        gap: 3rem;
-        /* Pe mobil, vrem ca datele de contact să fie PRIMELE, chiar dacă în HTML sunt a doua? 
-           Dacă da, decomentează liniile de mai jos (display flex). 
-           Dacă nu, lasă așa și va apărea formularul primul. */
-           
-        /* display: flex;
-        flex-direction: column-reverse; */ 
-    }
-}
-/* --- BUTON WHATSAPP (În pagina de contact) --- */
-.btn-whatsapp {
-    display: inline-block;
-    background-color: #25D366; /* Verdele oficial WhatsApp */
-    color: white !important; /* Text alb forțat */
-    padding: 10px 20px;
-    margin-top: 5px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.btn-whatsapp:hover {
-    background-color: #128C7E; /* Verde mai închis la mouse-over */
-    transform: translateY(-2px); /* Se ridică puțin */
 }
