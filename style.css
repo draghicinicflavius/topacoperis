@@ -157,11 +157,11 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     color: white;
     text-align: left;
     margin-top: 3.75rem;
-    padding: 2rem 0;
+    padding: 70px 0 20px 0;
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('images/fundal.jpg');
