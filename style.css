@@ -157,11 +157,11 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* PE DESKTOP ESTE CENTRAT (Mijloc) */
     color: white;
     text-align: left;
     margin-top: 3.75rem;
-    padding: 70px 0 20px 0;
+    padding: 2rem 0;
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('images/fundal.jpg');
@@ -390,7 +390,6 @@ h2::after {
     font-size: 1.1rem;
     display: flex;
     flex-direction: column;
-    /* IMPORTANT: Asta făcea butonul lung. O lăsăm așa pentru text, dar tratăm butonul separat */
 }
 
 .info-item a {
@@ -466,10 +465,8 @@ h2::after {
     text-decoration: none;
     transition: 0.3s;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    
-    /* FIX PENTRU LUNGIME: Să fie cât textul, nu cât pagina */
     width: fit-content; 
-    align-self: flex-start; /* Previne întinderea în flexbox */
+    align-self: flex-start;
 }
 
 .btn-whatsapp:hover {
@@ -478,22 +475,26 @@ h2::after {
 }
 
 /* =================================================================
-   6. RESPONSIVE OPTIMIZAT
+   6. RESPONSIVE OPTIMIZAT (MOBIL) - AICI ESTE FIX-UL
    ================================================================= */
 @media (max-width: 900px) {
     
-    /* 1. HERO SECTION */
+    /* 1. HERO SECTION - MODIFICAT SĂ FIE SUS */
     .hero-section {
-        min-height: 100vh; /* Păstrăm tot ecranul */
-        padding: 80px 0 30px 0; 
-        align-items: center; 
+        min-height: 100vh;
+        /* Padding sus de 75px (60px header + 15px spatiu) */
+        padding: 75px 0 30px 0; 
+        /* ACEASTA ESTE LINIA IMPORTANTĂ: ALINIEM SUS (FLEX-START), NU CENTRU */
+        align-items: flex-start; 
     }
 
     .hero-layout {
         flex-direction: column;
         text-align: center;
-        gap: 20px; 
-        justify-content: center;
+        gap: 15px; 
+        /* ȘI AICI ALINIEM SUS */
+        justify-content: flex-start;
+        margin-top: 10px;
     }
 
     /* 2. TITLURI */
@@ -507,11 +508,11 @@ h2::after {
         font-size: 1.1rem;
     }
 
-    /* FIX BUTON SUNA ACUM: Centrat */
+    /* Buton Suna Acum Mobil */
     .mobile-only {
         display: block;
-        width: 100%;      /* Ocupă toată lățimea containerului */
-        text-align: center; /* Forțează conținutul (butonul) pe centru */
+        width: 100%;
+        text-align: center;
         margin-bottom: 15px;
     }
     
@@ -588,13 +589,15 @@ h2::after {
 @media (min-width: 901px) {
     .mobile-only { display: none; }
 }
+
+/* Footer */
 .main-footer {
-    background-color: #222; /* Negru închis */
+    background-color: #222; 
     color: #fff;
     padding: 20px 0;
     text-align: center;
     font-size: 0.9rem;
-    border-top: 3px solid var(--primary-red); /* O linie roșie elegantă sus */
+    border-top: 3px solid var(--primary-red);
 }
 
 .main-footer p {
