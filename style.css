@@ -615,32 +615,52 @@ h2::after {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-/* --- BANDA DE ÎNCREDERE (Sub Formular pe Mobil) --- */
-.trust-badges {
+/* --- SECȚIUNE PARTENERI (Sub Formular pe Mobil) - Recalibrat să nu fie subțire --- */
+.partner-logos-container {
+    width: 100%;
+    margin-top: 25px; /* Mai mult spațiu față de formular */
+    padding: 20px; /* Mai mult padding interior pentru robustete */
+    border-radius: 8px;
+    background-color: white; /* Fundal alb curat */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* O umbră elegantă */
+    text-align: center;
+}
+
+.partner-logos-container h3 {
+    font-size: 1rem;
+    color: var(--dark-grey);
+    margin-bottom: 15px; /* Spațiu sub titlu */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.partner-logos-strip {
     display: flex;
     justify-content: space-around; /* Le împrăștie egal */
-    width: 100%;
-    margin-top: 15px; /* Spațiu față de formular */
-    background-color: rgba(0, 0, 0, 0.6); /* Fundal negru transparent să se vadă scrisul */
-    padding: 10px;
-    border-radius: 8px;
+    align-items: center; /* Le aliniază vertical pe centru */
+    gap: 15px; /* Spațiu între logo-uri */
+    flex-wrap: wrap; /* Pe telefoane mici se pot pune pe două rânduri */
 }
 
-.badge-item {
+.partner-logo-item {
+    flex: 0 0 25%; /* Pe un rând vor fi cam 4 pe un rând */
+    max-width: 80px; /* Limităm lățimea maximă */
+    height: auto;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
 }
 
-.badge-icon {
-    font-size: 1.2rem;
-    margin-bottom: 3px;
+.partner-logo-item img {
+    max-width: 100%;
+    max-height: 50px; /* Limităm înălțimea logo-ului */
+    display: block;
 }
 
-.badge-text {
-    text-align: center;
-    line-height: 1.2;
+/* --- RESPONSIVE OPTIMIZAT PE TELEFOANE FOARTE MICI --- */
+@media (max-width: 380px) {
+    .partner-logo-item {
+        flex: 0 0 40%; /* Pe telefoane mici se pun 2 pe rând */
+        margin-bottom: 10px;
+    }
 }
