@@ -426,31 +426,39 @@ h2::after {
 }
 
 /* Buton Plutitor */
+/* --- BUTON PLUTITOR WHATSAPP --- */
 .floating-call-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: #28a745;
+    /* Culoarea oficială WhatsApp */
+    background-color: #25D366; 
     color: white;
     border-radius: 50%;
     text-align: center;
-    line-height: 60px;
-    font-size: 30px;
+    line-height: 60px; /* Centrează iconița pe verticală */
+    font-size: 32px; /* Mărimea iconiței */
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 2000;
+    z-index: 2000; /* Să fie peste orice altceva */
     transition: transform 0.3s ease;
     text-decoration: none;
-    animation: pulse 2s infinite;
+    
+    /* Animație de pulsare (verde) */
+    animation: pulse-green 2s infinite;
 }
 
-.floating-call-btn:hover { transform: scale(1.1); background-color: #218838; }
+.floating-call-btn:hover {
+    background-color: #128C7E; /* Verde mai închis când pui mouse-ul */
+    transform: scale(1.1); /* Se mărește puțin */
+}
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(40, 167, 69, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+/* Definim animația de pulsare VERDE */
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 /* Buton WhatsApp Contact */
