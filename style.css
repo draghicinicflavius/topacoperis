@@ -672,3 +672,52 @@ h2::after {
         margin-bottom: 10px;
     }
 }
+/* Butonul Hero special pentru Mobil */
+.btn-hero-big {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 26px !important; /* Font uriaș */
+    font-weight: 900 !important;
+    padding: 22px 30px !important; /* Îl face gras și ușor de apăsat */
+    width: 100%; /* Ocupă toată lățimea pe mobil */
+    max-width: 400px;
+    margin: 20px auto;
+    text-transform: uppercase;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    background-color: #ff0000; /* Roșu aprins */
+    color: white;
+    border: none;
+}
+
+/* Efect de sclipire care trece peste buton la fiecare 3 secunde */
+.btn-hero-big::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(30deg);
+    transition: none;
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -60%; }
+    20% { left: 120%; }
+    100% { left: 120%; }
+}
+
+/* Ajustare pentru ecrane foarte mici */
+@media (max-width: 380px) {
+    .btn-hero-big {
+        font-size: 20px !important;
+        padding: 18px 20px !important;
+    }
+}
