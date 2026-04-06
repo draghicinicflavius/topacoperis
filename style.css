@@ -721,3 +721,29 @@ h2::after {
         padding: 18px 20px !important;
     }
 }
+.btn-hero-big {
+    display: flex !important;
+    flex-direction: column; /* Pune textele unul sub altul */
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px !important;
+    height: auto !important; /* Îl lăsăm să crească în funcție de conținut */
+}
+
+.btn-content {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.phone-number {
+    font-size: 28px !important; /* Numărul de telefon să fie uriaș */
+    letter-spacing: 1px;
+    display: block;
+}
+
+.cta-text {
+    font-size: 14px !important; /* Textul de îndemn mai mic sub număr */
+    font-weight: 400;
+    opacity: 0.9;
+}
